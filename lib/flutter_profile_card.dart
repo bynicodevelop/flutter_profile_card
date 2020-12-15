@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_avatar/flutter_profile_avatar.dart';
 import 'package:flutter_profile_card/models/Profile.dart';
 import 'package:flutter_profile_card/widgets/Stat.dart';
 
@@ -30,7 +31,6 @@ class ProfileCard extends StatefulWidget {
 class _ProfileCardState extends State<ProfileCard> {
   @override
   Widget build(BuildContext context) {
-    print(widget.profile.isFollow);
     return ListView(
       children: [
         Container(
@@ -55,10 +55,10 @@ class _ProfileCardState extends State<ProfileCard> {
                       )
                     ],
                   ),
-                  child: CircleAvatar(
-                    radius: 70,
-                    backgroundColor: Theme.of(context).primaryColor,
-                    backgroundImage: NetworkImage(widget.profile.avatarURL),
+                  child: ProfileAvatar(
+                    size: 70,
+                    username: widget.profile.username,
+                    avatarURL: widget.profile.avatarURL,
                   ),
                 ),
               ),
