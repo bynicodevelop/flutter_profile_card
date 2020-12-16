@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_avatar/flutter_profile_avatar.dart';
-import 'package:flutter_profile_card/models/Profile.dart';
 import 'package:flutter_profile_card/widgets/Stat.dart';
+import 'package:flutter_models/models/UserModel.dart';
 
 class ProfileCard extends StatefulWidget {
-  final ProfileModel profile;
-  final Function(ProfileModel) onFollowed;
+  final UserModel profile;
+  final Function(UserModel) onFollowed;
 
   final String aboutLabel;
   final String followLabel;

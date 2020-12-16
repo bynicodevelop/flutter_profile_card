@@ -4,6 +4,8 @@ This plugin allows you to display a user profile with its followers and followin
 
 Also allows to have a button to follow the user profile.
 
+![](https://media.giphy.com/media/SbxjWP7WmC4EmAPcfD/giphy.gif)
+
 ## Getting Started
 
 ```

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_card/flutter_profile_card.dart';
-import 'package:flutter_profile_card/models/Profile.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image_test_utils/image_test_utils.dart';
+import 'package:flutter_models/models/UserModel.dart';
 
 main() {
   testWidgets('Should see basics componants', (WidgetTester tester) async {
     // ARRANGE
-    ProfileModel profileModel = ProfileModel(
+    UserModel profileModel = UserModel(
       uid: '123456789',
       username: 'John Doe',
       status: 'status',
@@ -45,7 +45,7 @@ main() {
 
   testWidgets('Should see follow button', (WidgetTester tester) async {
     // ARRANGE
-    ProfileModel profileModel = ProfileModel(
+    UserModel profileModel = UserModel(
       uid: '123456789',
       username: 'John Doe',
       status: 'status',
@@ -75,7 +75,7 @@ main() {
 
   testWidgets('Should see unfollow button', (WidgetTester tester) async {
     // ARRANGE
-    ProfileModel profileModel = ProfileModel(
+    UserModel profileModel = UserModel(
       uid: '123456789',
       username: 'John Doe',
       status: 'status',
@@ -108,7 +108,7 @@ main() {
       (WidgetTester tester) async {
     // ARRANGE
     bool event = false;
-    ProfileModel profileModel = ProfileModel(
+    UserModel profileModel = UserModel(
       uid: '123456789',
       username: 'John Doe',
       status: '',
@@ -139,7 +139,7 @@ main() {
 
   testWidgets('Should not see about section', (WidgetTester tester) async {
     // ARRANGE
-    ProfileModel profileModel = ProfileModel(
+    UserModel profileModel = UserModel(
       uid: '123456789',
       username: 'John Doe',
       status: '',
