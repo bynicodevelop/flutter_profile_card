@@ -55,10 +55,13 @@ class _ProfileCardState extends State<ProfileCard> {
                       )
                     ],
                   ),
-                  child: ProfileAvatar(
-                    size: 70,
-                    username: widget.profile.username,
-                    avatarURL: widget.profile.avatarURL,
+                  child: Hero(
+                    tag: widget.profile.uid,
+                    child: ProfileAvatar(
+                      size: 70,
+                      username: widget.profile.username,
+                      avatarURL: widget.profile.avatarURL,
+                    ),
                   ),
                 ),
               ),
