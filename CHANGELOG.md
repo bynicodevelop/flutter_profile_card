@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+- Updated the version of Flutter Models
+
 ## 0.0.2+2
 
 - Added Hero class on Avatar Profile
