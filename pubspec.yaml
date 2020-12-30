@@ -1,6 +1,6 @@
 name: flutter_profile_card
 description: This plugin allows you to display a user profile with its followers and followings.
-version: 0.0.2+3
+version: 0.0.3
 homepage: https://github.com/bynicodevelop/flutter_profile_card
 
 environment:
@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   flutter_profile_avatar: ^0.0.2+1
   flutter_models: ^0.0.3+1
+
+  flutter_spinkit: ^4.1.2+1
 
 dev_dependencies:
   flutter_test:

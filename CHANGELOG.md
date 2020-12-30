@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Added loading state when the user click on the button follow
+
 ## 0.0.2+3
 
 - Updated the version of Flutter Models

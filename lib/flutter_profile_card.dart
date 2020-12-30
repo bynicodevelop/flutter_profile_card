@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile_avatar/flutter_profile_avatar.dart';
 import 'package:flutter_profile_card/widgets/Stat.dart';
 import 'package:flutter_models/models/UserModel.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class ProfileCard extends StatefulWidget {
   final UserModel profile;
@@ -29,6 +30,8 @@ class ProfileCard extends StatefulWidget {
 }
 
 class _ProfileCardState extends State<ProfileCard> {
+  bool _loading = false;
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -134,23 +137,43 @@ class _ProfileCardState extends State<ProfileCard> {
               vertical: 30.0,
             ),
             child: Center(
-              child: RaisedButton(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 15.0,
-                  horizontal: 100.0,
-                ),
-                color: !widget.profile.isFollow
-                    ? Theme.of(context).primaryColor
-                    : Colors.grey,
-                onPressed: () async => widget.onFollowed(widget.profile),
-                child: Text(
-                  !widget.profile.isFollow
-                      ? widget.followLabel.toUpperCase()
-                      : widget.unfollowLabel.toUpperCase(),
-                  style: TextStyle(
-                    fontSize: Theme.of(context).textTheme.headline5.fontSize,
-                    color: Colors.white,
+              child: Container(
+                width: MediaQuery.of(context).size.width - 60.0,
+                child: RaisedButton(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15.0,
+                    horizontal: 100.0,
                   ),
+                  color: !widget.profile.isFollow
+                      ? Theme.of(context).primaryColor
+                      : Colors.grey,
+                  onPressed: () async {
+                    setState(() => _loading = !_loading);
+
+                    await widget.onFollowed(widget.profile);
+
+                    setState(() => _loading = !_loading);
+                  },
+                  child: !_loading
+                      ? Text(
+                          !widget.profile.isFollow
+                              ? widget.followLabel.toUpperCase()
+                              : widget.unfollowLabel.toUpperCase(),
+                          style: TextStyle(
+                            fontSize:
+                                Theme.of(context).textTheme.headline5.fontSize,
+                            color: Colors.white,
+                          ),
+                        )
+                      : SizedBox(
+                          height:
+                              Theme.of(context).textTheme.headline5.fontSize +
+                                  4,
+                          child: SpinKitThreeBounce(
+                            color: Colors.white,
+                            size: 20.0,
+                          ),
+                        ),
                 ),
               ),
             ),

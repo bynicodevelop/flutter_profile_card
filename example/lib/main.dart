@@ -52,8 +52,11 @@ class _MyAppState extends State<MyApp> {
             // Add the model in the widget parameter
             profile: _profileModel,
             // Capture the follow event
-            onFollowed: (UserModel profile) {
+            onFollowed: (UserModel profile) async {
               print(profile.toJson());
+
+              await Future.delayed(Duration(seconds: 3));
+
               setState(() {
                 // Database code...
                 _isFollow = !_isFollow;

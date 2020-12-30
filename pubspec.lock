@@ -147,7 +147,7 @@ packages:
     source: hosted
     version: "0.0.2+1"
   flutter_spinkit:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_spinkit
       url: "https://pub.dartlang.org"
