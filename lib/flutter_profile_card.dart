@@ -70,11 +70,9 @@ class _ProfileCardState extends State<ProfileCard> {
               ),
               Text(
                 widget.profile.username.toUpperCase(),
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: Theme.of(context).textTheme.headline4.fontSize,
-                ),
+                style: Theme.of(context).textTheme.headline4.copyWith(
+                      color: Colors.white,
+                    ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -142,7 +140,6 @@ class _ProfileCardState extends State<ProfileCard> {
                 child: RaisedButton(
                   padding: const EdgeInsets.symmetric(
                     vertical: 15.0,
-                    horizontal: 100.0,
                   ),
                   color: !widget.profile.isFollow
                       ? Theme.of(context).primaryColor
@@ -159,12 +156,16 @@ class _ProfileCardState extends State<ProfileCard> {
                           !widget.profile.isFollow
                               ? widget.followLabel.toUpperCase()
                               : widget.unfollowLabel.toUpperCase(),
-                          style: TextStyle(
-                            fontSize:
-                                Theme.of(context).textTheme.headline5.fontSize,
-                            color: Colors.white,
-                          ),
-                        )
+                          style: Theme.of(context).textTheme.headline5.copyWith(
+                                color: Colors.white,
+                              )
+
+                          // TextStyle(
+                          //   fontSize:
+                          //       Theme.of(context).textTheme.headline5.fontSize,
+                          //   color: Colors.white,
+                          // ),
+                          )
                       : SizedBox(
                           height:
                               Theme.of(context).textTheme.headline5.fontSize +
