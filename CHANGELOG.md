@@ -1,3 +1,7 @@
+## 0.0.3+1
+
+- Optimized follow button on small screens
+
 ## 0.0.3
 
 - Added loading state when the user click on the button follow
